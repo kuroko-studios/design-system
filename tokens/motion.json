@@ -1,0 +1,17 @@
+{
+  "duration": {
+    "$type": "duration",
+    "instant": { "$value": "0ms" },
+    "fast":    { "$value": "120ms" },
+    "base":    { "$value": "200ms" },
+    "slow":    { "$value": "320ms" }
+  },
+
+  "easing": {
+    "$type": "cubicBezier",
+    "$description": "Restrained, purposeful motion. Respect prefers-reduced-motion in consumers.",
+    "standard": { "$value": "cubic-bezier(0.2, 0, 0, 1)" },
+    "entrance": { "$value": "cubic-bezier(0, 0, 0, 1)" },
+    "exit":     { "$value": "cubic-bezier(0.3, 0, 1, 1)" }
+  }
+}

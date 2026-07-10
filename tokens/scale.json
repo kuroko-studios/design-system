@@ -1,0 +1,51 @@
+{
+  "space": {
+    "$type": "dimension",
+    "$description": "Spacing scale (px).",
+    "0":  { "$value": "0px" },
+    "1":  { "$value": "4px" },
+    "2":  { "$value": "8px" },
+    "3":  { "$value": "12px" },
+    "4":  { "$value": "16px" },
+    "5":  { "$value": "20px" },
+    "6":  { "$value": "24px" },
+    "8":  { "$value": "32px" },
+    "10": { "$value": "40px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "20": { "$value": "80px" }
+  },
+
+  "radius": {
+    "$type": "dimension",
+    "sm":   { "$value": "8px" },
+    "md":   { "$value": "10px" },
+    "lg":   { "$value": "14px" },
+    "xl":   { "$value": "16px" },
+    "pill": { "$value": "999px" }
+  },
+
+  "border": {
+    "$type": "dimension",
+    "hairline": { "$value": "1px" },
+    "strong":   { "$value": "2px" }
+  },
+
+  "breakpoint": {
+    "$type": "dimension",
+    "sm": { "$value": "540px" },
+    "md": { "$value": "768px" },
+    "lg": { "$value": "1024px" },
+    "xl": { "$value": "1280px" }
+  },
+
+  "zIndex": {
+    "$type": "number",
+    "base":     { "$value": 0 },
+    "dropdown": { "$value": 1000 },
+    "sticky":   { "$value": 1100 },
+    "overlay":  { "$value": 1200 },
+    "modal":    { "$value": 1300 },
+    "toast":    { "$value": 1400 }
+  }
+}

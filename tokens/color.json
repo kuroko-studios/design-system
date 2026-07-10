@@ -1,0 +1,51 @@
+{
+  "color": {
+    "$type": "color",
+    "$description": "Raw palette. Dark-first (kuroko = black). Warm, teal-tinted near-blacks for surfaces; warm off-white for text; teal accent. Semantic roles live in semantic.json.",
+
+    "ink": {
+      "$description": "Warm, teal-tinted near-blacks — the stagehand's black. Surfaces.",
+      "950": { "$value": "#0B100F" },
+      "900": { "$value": "#0F1615" },
+      "850": { "$value": "#131C1A" },
+      "800": { "$value": "#182220" },
+      "750": { "$value": "#1E2A27" },
+      "700": { "$value": "#26332F" },
+      "600": { "$value": "#33403B" }
+    },
+
+    "fog": {
+      "$description": "Warm off-whites / greys — text on dark.",
+      "50":  { "$value": "#F4F3EE" },
+      "200": { "$value": "#D8D9D2" },
+      "400": { "$value": "#A2A79F" },
+      "500": { "$value": "#7C827B" },
+      "600": { "$value": "#5C625C" }
+    },
+
+    "teal": {
+      "$description": "The signature accent. Deep brand teal, brightened for legibility on dark.",
+      "700": { "$value": "#0C5A46" },
+      "600": { "$value": "#0F6E56" },
+      "500": { "$value": "#159A73" },
+      "400": { "$value": "#2FB98E" },
+      "300": { "$value": "#57CFA6" },
+      "tint": { "$value": "#122320" }
+    },
+
+    "amber": {
+      "500": { "$value": "#D39A3E" },
+      "tint": { "$value": "#231B10" }
+    },
+
+    "red": {
+      "500": { "$value": "#D6604A" },
+      "tint": { "$value": "#241311" }
+    },
+
+    "pure": {
+      "white": { "$value": "#FFFFFF" },
+      "black": { "$value": "#000000" }
+    }
+  }
+}

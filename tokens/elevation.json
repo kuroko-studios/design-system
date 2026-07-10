@@ -1,0 +1,10 @@
+{
+  "elevation": {
+    "$type": "shadow",
+    "$description": "Subtle depth for the dark brand — soft, low, no harsh black. Pair with a hairline border on raised surfaces. A deliberate step up from the Phase 1 flat stance.",
+    "0": { "$value": "none" },
+    "1": { "$value": "0 1px 2px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.25)" },
+    "2": { "$value": "0 4px 12px rgba(0,0,0,0.40), 0 2px 4px rgba(0,0,0,0.30)" },
+    "3": { "$value": "0 12px 32px rgba(0,0,0,0.50), 0 4px 8px rgba(0,0,0,0.35)" }
+  }
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kuroko Design System — dark v0</title>
+<!-- Canonical: consumes the generated tokens directly. Single source of truth. -->
+<link rel="stylesheet" href="../dist/kuroko-tokens.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--krk-surface-page);
+    color: var(--krk-text-primary);
+    font-family: var(--krk-font-family-sans);
+    font-size: var(--krk-font-size-base);
+    line-height: var(--krk-line-height-normal);
+    padding: var(--krk-space-10) var(--krk-space-5) var(--krk-space-20);
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .eyebrow {
+    font-size: var(--krk-font-size-xs); font-weight: var(--krk-font-weight-bold);
+    letter-spacing: var(--krk-letter-spacing-eyebrow); text-transform: uppercase;
+    color: var(--krk-text-muted);
+  }
+  .wordmark { font-size: var(--krk-font-size-4xl); font-weight: var(--krk-font-weight-bold);
+    letter-spacing: var(--krk-letter-spacing-tight); }
+  .wordmark .dot { color: var(--krk-accent-text); }
+  .tagline { color: var(--krk-text-secondary); font-size: var(--krk-font-size-lg);
+    margin-top: var(--krk-space-2); }
+  h2 { font-size: var(--krk-font-size-xl); margin: var(--krk-space-12) 0 var(--krk-space-4);
+    padding-bottom: var(--krk-space-2); border-bottom: var(--krk-border-hairline) solid var(--krk-line-default); }
+
+  /* Swatches */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--krk-space-3); }
+  .swatch { border: var(--krk-border-hairline) solid var(--krk-line-default);
+    border-radius: var(--krk-radius-lg); overflow: hidden; }
+  .swatch .chip { height: 64px; }
+  .swatch .meta { padding: var(--krk-space-2) var(--krk-space-3); background: var(--krk-surface-raised); }
+  .swatch .name { font-size: var(--krk-font-size-sm); }
+  .swatch .hex { font-family: var(--krk-font-family-mono); font-size: var(--krk-font-size-xs);
+    color: var(--krk-text-muted); }
+
+  /* Type scale */
+  .type-row { display: flex; align-items: baseline; gap: var(--krk-space-4);
+    padding: var(--krk-space-2) 0; border-bottom: var(--krk-border-hairline) solid var(--krk-line-default); }
+  .type-row .label { width: 56px; color: var(--krk-text-muted); font-size: var(--krk-font-size-xs);
+    font-family: var(--krk-font-family-mono); flex: none; }
+
+  /* Components */
+  .row { display: flex; flex-wrap: wrap; gap: var(--krk-space-3); align-items: center; }
+  .btn {
+    font: inherit; font-weight: var(--krk-font-weight-semibold); font-size: var(--krk-font-size-base);
+    padding: 10px 16px; border-radius: var(--krk-radius-md); cursor: pointer;
+    border: var(--krk-border-hairline) solid transparent;
+    transition: background var(--krk-duration-fast) var(--krk-easing-standard),
+                border-color var(--krk-duration-fast) var(--krk-easing-standard),
+                transform var(--krk-duration-fast) var(--krk-easing-standard);
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--krk-accent-default); color: var(--krk-text-on-accent); }
+  .btn-primary:hover { background: var(--krk-accent-hover); }
+  .btn-secondary { background: var(--krk-surface-raised); color: var(--krk-text-primary);
+    border-color: var(--krk-line-default); }
+  .btn-secondary:hover { border-color: var(--krk-line-strong); }
+  .btn-ghost { background: transparent; color: var(--krk-text-secondary); }
+  .btn-ghost:hover { color: var(--krk-text-primary); }
+  .btn-danger { background: transparent; color: var(--krk-status-danger);
+    border-color: var(--krk-line-default); }
+  .btn-danger:hover { border-color: var(--krk-status-danger); }
+
+  .chip-pill {
+    font-size: var(--krk-font-size-sm); padding: 6px 14px; border-radius: var(--krk-radius-pill);
+    border: var(--krk-border-hairline) solid var(--krk-line-default); background: transparent;
+    color: var(--krk-text-primary); cursor: pointer;
+    transition: border-color var(--krk-duration-fast) var(--krk-easing-standard);
+  }
+  .chip-pill:hover { border-color: var(--krk-line-strong); }
+  .chip-pill.on { background: var(--krk-accent-tint); border-color: var(--krk-accent-default);
+    color: var(--krk-accent-text); font-weight: var(--krk-font-weight-semibold); }
+
+  .badge { display: inline-flex; align-items: center; font-size: var(--krk-font-size-xs);
+    font-weight: var(--krk-font-weight-semibold); padding: 3px 10px; border-radius: var(--krk-radius-pill);
+    border: var(--krk-border-hairline) solid; }
+  .badge-ok { background: var(--krk-status-ok-tint); border-color: var(--krk-status-ok); color: var(--krk-status-ok); }
+  .badge-warning { background: var(--krk-status-warning-tint); border-color: var(--krk-status-warning); color: var(--krk-status-warning); }
+  .badge-danger { background: var(--krk-status-danger-tint); border-color: var(--krk-status-danger); color: var(--krk-status-danger); }
+
+  .card {
+    background: var(--krk-surface-raised); border: var(--krk-border-hairline) solid var(--krk-line-default);
+    border-radius: var(--krk-radius-xl); padding: var(--krk-space-5); box-shadow: var(--krk-elevation-1);
+    transition: box-shadow var(--krk-duration-base) var(--krk-easing-standard),
+                transform var(--krk-duration-base) var(--krk-easing-standard);
+  }
+  .card:hover { box-shadow: var(--krk-elevation-2); transform: translateY(-2px); }
+  .card h3 { font-size: var(--krk-font-size-lg); margin-bottom: var(--krk-space-1); }
+  .card p { color: var(--krk-text-secondary); font-size: var(--krk-font-size-base); }
+
+  .input {
+    width: 100%; font: inherit; font-size: var(--krk-font-size-md); padding: 10px 12px;
+    background: var(--krk-surface-field); color: var(--krk-text-primary);
+    border: var(--krk-border-hairline) solid var(--krk-line-default); border-radius: var(--krk-radius-sm);
+    transition: border-color var(--krk-duration-fast) var(--krk-easing-standard),
+                box-shadow var(--krk-duration-fast) var(--krk-easing-standard);
+  }
+  .input::placeholder { color: var(--krk-text-muted); }
+  .input:focus { outline: none; border-color: var(--krk-accent-default);
+    box-shadow: 0 0 0 3px var(--krk-accent-tint); }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: var(--krk-font-size-xs); text-transform: uppercase;
+    letter-spacing: var(--krk-letter-spacing-eyebrow); color: var(--krk-text-muted);
+    padding: var(--krk-space-2) var(--krk-space-3); border-bottom: var(--krk-border-hairline) solid var(--krk-line-default); }
+  td { padding: var(--krk-space-3); border-bottom: var(--krk-border-hairline) solid var(--krk-line-default);
+    color: var(--krk-text-primary); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--krk-space-4); align-items: start; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Kuroko Design System · dark v0</p>
+  <div class="wordmark">KUROKO<span class="dot">.</span></div>
+  <p class="tagline">Give AI a job, not a question.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div id="type"></div>
+
+  <h2>Components</h2>
+  <div class="grid-2">
+    <div>
+      <p class="eyebrow" style="margin-bottom:12px">Buttons</p>
+      <div class="row" style="margin-bottom:24px">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-danger">Danger</button>
+      </div>
+      <p class="eyebrow" style="margin-bottom:12px">Chips</p>
+      <div class="row" style="margin-bottom:24px">
+        <button class="chip-pill on">Brain</button>
+        <button class="chip-pill">Connections</button>
+        <button class="chip-pill">Workers</button>
+      </div>
+      <p class="eyebrow" style="margin-bottom:12px">Status badges</p>
+      <div class="row">
+        <span class="badge badge-ok">OK</span>
+        <span class="badge badge-warning">Rotation due</span>
+        <span class="badge badge-danger">Failing</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <h3>The Brain</h3>
+        <p>One place that holds how your business works, so AI acts with real context. Hover me for elevation + motion.</p>
+      </div>
+      <input class="input" placeholder="Work email…" style="margin-bottom:16px" />
+      <table>
+        <thead><tr><th>Asset</th><th>Access</th><th>Health</th></tr></thead>
+        <tbody>
+          <tr><td>n8n instance</td><td>Collaborator</td><td><span class="badge badge-ok">OK</span></td></tr>
+          <tr><td>Xero connector</td><td>Collaborator</td><td><span class="badge badge-warning">Unknown</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const swatches = [
+    ["surface-page", "Page"], ["surface-base", "Base"], ["surface-raised", "Raised"],
+    ["surface-overlay", "Overlay"], ["text-primary", "Text"], ["text-secondary", "Secondary"],
+    ["text-muted", "Muted"], ["accent-default", "Accent"], ["accent-text", "Accent text"],
+    ["accent-tint", "Accent tint"], ["status-ok", "OK"], ["status-warning", "Warning"],
+    ["status-danger", "Danger"], ["line-default", "Line"]
+  ];
+  const cs = getComputedStyle(document.documentElement);
+  const resolve = (name) => cs.getPropertyValue('--krk-' + name).trim();
+  document.getElementById('swatches').innerHTML = swatches.map(([v, label]) => `
+    <div class="swatch">
+      <div class="chip" style="background: var(--krk-${v})"></div>
+      <div class="meta"><div class="name">${label}</div><div class="hex">${resolve(v) || '—'}</div></div>
+    </div>`).join('');
+
+  const type = [
+    ["5xl", "Display"], ["4xl", "Wordmark"], ["3xl", "Heading"], ["2xl", "Title"],
+    ["xl", "Section"], ["lg", "Lede"], ["base", "Body"], ["sm", "Small"], ["xs", "Eyebrow"]
+  ];
+  document.getElementById('type').innerHTML = type.map(([s, label]) => `
+    <div class="type-row">
+      <span class="label">${s}</span>
+      <span style="font-size: var(--krk-font-size-${s})">Give AI a job — ${label}</span>
+    </div>`).join('');
+</script>
+</body>
+</html>

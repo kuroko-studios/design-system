@@ -1,0 +1,49 @@
+{
+  "surface": {
+    "$type": "color",
+    "$description": "Semantic surface roles (dark theme). Components reference these, not raw palette.",
+    "page":    { "$value": "{color.ink.950}" },
+    "base":    { "$value": "{color.ink.900}" },
+    "raised":  { "$value": "{color.ink.850}" },
+    "overlay": { "$value": "{color.ink.800}" },
+    "field":   { "$value": "{color.ink.850}" }
+  },
+
+  "text": {
+    "$type": "color",
+    "primary":   { "$value": "{color.fog.50}" },
+    "secondary": { "$value": "{color.fog.400}" },
+    "muted":     { "$value": "{color.fog.500}" },
+    "on-accent": { "$value": "{color.fog.50}" }
+  },
+
+  "line": {
+    "$type": "color",
+    "default": { "$value": "{color.ink.700}" },
+    "strong":  { "$value": "{color.ink.600}" }
+  },
+
+  "accent": {
+    "$type": "color",
+    "default": { "$value": "{color.teal.500}" },
+    "hover":   { "$value": "{color.teal.400}" },
+    "pressed": { "$value": "{color.teal.600}" },
+    "text":    { "$value": "{color.teal.400}" },
+    "tint":    { "$value": "{color.teal.tint}" }
+  },
+
+  "status": {
+    "$type": "color",
+    "ok":            { "$value": "{color.teal.400}" },
+    "ok-tint":       { "$value": "{color.teal.tint}" },
+    "warning":       { "$value": "{color.amber.500}" },
+    "warning-tint":  { "$value": "{color.amber.tint}" },
+    "danger":        { "$value": "{color.red.500}" },
+    "danger-tint":   { "$value": "{color.red.tint}" }
+  },
+
+  "focus": {
+    "$type": "color",
+    "ring": { "$value": "{color.teal.500}" }
+  }
+}

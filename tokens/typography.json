@@ -1,0 +1,44 @@
+{
+  "fontFamily": {
+    "$type": "fontFamily",
+    "$description": "System sans stack for v0 (brand typeface swaps in later via the same pipeline).",
+    "sans": { "$value": "-apple-system, \"Segoe UI\", Helvetica, Arial, sans-serif" },
+    "mono": { "$value": "ui-monospace, SFMono-Regular, Menlo, monospace" }
+  },
+
+  "fontWeight": {
+    "$type": "fontWeight",
+    "regular":  { "$value": 400 },
+    "medium":   { "$value": 500 },
+    "semibold": { "$value": 600 },
+    "bold":     { "$value": 700 }
+  },
+
+  "fontSize": {
+    "$type": "dimension",
+    "$description": "UI scale (from HQ) plus display sizes for the marketing hero.",
+    "xs":  { "$value": "12px" },
+    "sm":  { "$value": "13px" },
+    "base":{ "$value": "14px" },
+    "md":  { "$value": "15px" },
+    "lg":  { "$value": "18px" },
+    "xl":  { "$value": "22px" },
+    "2xl": { "$value": "26px" },
+    "3xl": { "$value": "32px" },
+    "4xl": { "$value": "42px" },
+    "5xl": { "$value": "56px" }
+  },
+
+  "lineHeight": {
+    "$type": "number",
+    "tight":   { "$value": 1.25 },
+    "normal":  { "$value": 1.5 },
+    "relaxed": { "$value": 1.6 }
+  },
+
+  "letterSpacing": {
+    "$type": "dimension",
+    "eyebrow": { "$value": "0.12em" },
+    "tight":   { "$value": "-0.01em" }
+  }
+}

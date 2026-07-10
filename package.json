@@ -1,0 +1,22 @@
+{
+  "name": "@kuroko-studios/design",
+  "version": "0.1.0",
+  "description": "Kuroko Design System — machine-readable design tokens (dark brand v0).",
+  "type": "module",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/kuroko-tokens.css",
+    "./theme.css": "./dist/kuroko-theme.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  }
+}

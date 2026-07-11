@@ -1,0 +1,200 @@
+/*
+ * Kuroko Design System — component layer.
+ * Token-driven component styles, harvested from Kuroko HQ's primitives.
+ * Self-contained: every value is a var(--krk-*). No Tailwind required — load
+ * this alongside kuroko-tokens.css and the classes just work. The React
+ * components in ./ apply exactly these classes, so this file is the single
+ * source of truth for how components look.
+ */
+
+/* ---------------------------------------------------------------- eyebrow */
+.krk-section-label {
+  font-size: var(--krk-font-size-xs);
+  font-weight: var(--krk-font-weight-bold);
+  letter-spacing: var(--krk-letter-spacing-eyebrow);
+  text-transform: uppercase;
+  color: var(--krk-text-muted);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ label */
+.krk-label {
+  display: block;
+  font-size: var(--krk-font-size-sm);
+  color: var(--krk-text-secondary);
+  margin-bottom: var(--krk-space-1);
+}
+
+/* ----------------------------------------------------------------- button */
+.krk-btn {
+  font: inherit;
+  font-weight: var(--krk-font-weight-semibold);
+  font-size: var(--krk-font-size-base);
+  padding: 10px var(--krk-space-4);
+  border-radius: var(--krk-radius-md);
+  border: var(--krk-border-hairline) solid transparent;
+  cursor: pointer;
+  transition:
+    background var(--krk-duration-fast) var(--krk-easing-standard),
+    border-color var(--krk-duration-fast) var(--krk-easing-standard),
+    box-shadow var(--krk-duration-base) var(--krk-easing-standard),
+    transform var(--krk-duration-fast) var(--krk-easing-standard),
+    color var(--krk-duration-fast) var(--krk-easing-standard);
+}
+.krk-btn:active { transform: translateY(1px); }
+.krk-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.krk-btn--sm { font-size: var(--krk-font-size-sm); padding: 6px var(--krk-space-3); }
+
+.krk-btn--primary {
+  background: var(--krk-accent-default);
+  color: var(--krk-text-on-accent);
+  box-shadow: var(--krk-glow-accent);
+}
+.krk-btn--primary:hover { background: var(--krk-accent-hover); box-shadow: var(--krk-glow-accent-strong); }
+
+.krk-btn--secondary {
+  background: var(--krk-surface-raised);
+  color: var(--krk-text-primary);
+  border-color: var(--krk-line-default);
+}
+.krk-btn--secondary:hover { border-color: var(--krk-line-strong); }
+
+.krk-btn--ghost { background: transparent; color: var(--krk-text-secondary); }
+.krk-btn--ghost:hover { color: var(--krk-text-primary); }
+
+.krk-btn--danger {
+  background: transparent;
+  color: var(--krk-status-danger);
+  border-color: var(--krk-line-default);
+}
+.krk-btn--danger:hover { border-color: var(--krk-status-danger); }
+
+/* ------------------------------------------------------------------- card */
+.krk-card {
+  background: var(--krk-surface-raised);
+  border: var(--krk-border-hairline) solid var(--krk-line-default);
+  border-radius: var(--krk-radius-xl);
+  box-shadow: var(--krk-elevation-1);
+}
+
+/* ---------------------------------------------------------- chip / option */
+.krk-chip {
+  font: inherit;
+  font-size: var(--krk-font-size-sm);
+  padding: 6px var(--krk-space-4);
+  border-radius: var(--krk-radius-pill);
+  border: var(--krk-border-hairline) solid var(--krk-line-default);
+  background: transparent;
+  color: var(--krk-text-primary);
+  cursor: pointer;
+  transition: border-color var(--krk-duration-fast) var(--krk-easing-standard),
+    background var(--krk-duration-fast) var(--krk-easing-standard);
+}
+.krk-chip:hover { border-color: var(--krk-line-strong); }
+.krk-chip.is-on {
+  background: var(--krk-accent-tint);
+  border-color: var(--krk-accent-default);
+  color: var(--krk-accent-text);
+  font-weight: var(--krk-font-weight-semibold);
+}
+
+.krk-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: var(--krk-font-size-base);
+  padding: 11px var(--krk-space-4);
+  border-radius: var(--krk-radius-md);
+  border: var(--krk-border-hairline) solid var(--krk-line-default);
+  background: transparent;
+  color: var(--krk-text-primary);
+  cursor: pointer;
+  transition: border-color var(--krk-duration-fast) var(--krk-easing-standard),
+    background var(--krk-duration-fast) var(--krk-easing-standard);
+}
+.krk-option:hover { border-color: var(--krk-line-strong); }
+.krk-option.is-on {
+  background: var(--krk-accent-tint);
+  border-color: var(--krk-accent-default);
+  color: var(--krk-accent-text);
+  font-weight: var(--krk-font-weight-semibold);
+}
+
+/* group layout helpers */
+.krk-chip-group { display: flex; flex-wrap: wrap; gap: var(--krk-space-2); }
+.krk-option-group { display: flex; flex-direction: column; gap: var(--krk-space-2); }
+
+/* ------------------------------------------------ field (input/textarea) */
+.krk-field {
+  width: 100%;
+  font: inherit;
+  font-size: var(--krk-font-size-md);
+  padding: 10px var(--krk-space-3);
+  background: var(--krk-surface-field);
+  color: var(--krk-text-primary);
+  border: var(--krk-border-hairline) solid var(--krk-line-default);
+  border-radius: var(--krk-radius-sm);
+  transition: border-color var(--krk-duration-fast) var(--krk-easing-standard),
+    box-shadow var(--krk-duration-fast) var(--krk-easing-standard);
+}
+.krk-field::placeholder { color: var(--krk-text-muted); }
+.krk-field:focus {
+  outline: none;
+  border-color: var(--krk-accent-default);
+  box-shadow: 0 0 0 3px var(--krk-accent-tint);
+}
+textarea.krk-field { resize: vertical; }
+
+/* ------------------------------------------------------------------ badge */
+.krk-badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: var(--krk-font-size-xs);
+  font-weight: var(--krk-font-weight-semibold);
+  padding: 3px var(--krk-space-3);
+  border-radius: var(--krk-radius-pill);
+  border: var(--krk-border-hairline) solid;
+}
+.krk-badge--neutral { background: var(--krk-surface-overlay); border-color: var(--krk-line-default); color: var(--krk-text-secondary); }
+.krk-badge--accent  { background: var(--krk-accent-tint); border-color: var(--krk-accent-default); color: var(--krk-accent-text); }
+.krk-badge--ok      { background: var(--krk-status-ok-tint); border-color: var(--krk-status-ok); color: var(--krk-status-ok); }
+.krk-badge--warning { background: var(--krk-status-warning-tint); border-color: var(--krk-status-warning); color: var(--krk-status-warning); }
+.krk-badge--danger  { background: var(--krk-status-danger-tint); border-color: var(--krk-status-danger); color: var(--krk-status-danger); }
+
+/* ------------------------------------------------------------------ table */
+.krk-table { width: 100%; border-collapse: collapse; }
+.krk-table th {
+  text-align: left;
+  font-size: var(--krk-font-size-xs);
+  font-weight: var(--krk-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--krk-letter-spacing-eyebrow);
+  color: var(--krk-text-muted);
+  padding: var(--krk-space-2) var(--krk-space-3);
+  border-bottom: var(--krk-border-hairline) solid var(--krk-line-default);
+}
+.krk-table td {
+  padding: var(--krk-space-3);
+  border-bottom: var(--krk-border-hairline) solid var(--krk-line-default);
+  color: var(--krk-text-primary);
+}
+.krk-table tr:last-child td { border-bottom: 0; }
+
+/* ------------------------------------------------------------------- tabs */
+.krk-tabs { display: flex; gap: var(--krk-space-1); border-bottom: var(--krk-border-hairline) solid var(--krk-line-default); }
+.krk-tab {
+  font: inherit;
+  font-size: var(--krk-font-size-sm);
+  padding: var(--krk-space-2) 14px;
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--krk-text-secondary);
+  cursor: pointer;
+  transition: color var(--krk-duration-fast) var(--krk-easing-standard);
+}
+.krk-tab:hover { color: var(--krk-text-primary); }
+.krk-tab.is-active { color: var(--krk-accent-text); border-bottom-color: var(--krk-accent-default); font-weight: var(--krk-font-weight-semibold); }

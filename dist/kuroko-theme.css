@@ -1,0 +1,47 @@
+/* Kuroko Design System — Tailwind v4 theme layer. */
+@import "./kuroko-tokens.css";
+
+@theme inline {
+  --radius-sm: var(--krk-radius-sm);
+  --radius-md: var(--krk-radius-md);
+  --radius-lg: var(--krk-radius-lg);
+  --radius-xl: var(--krk-radius-xl);
+  --radius-pill: var(--krk-radius-pill);
+  --color-surface-page: var(--krk-surface-page);
+  --color-surface-base: var(--krk-surface-base);
+  --color-surface-raised: var(--krk-surface-raised);
+  --color-surface-overlay: var(--krk-surface-overlay);
+  --color-surface-field: var(--krk-surface-field);
+  --color-text-primary: var(--krk-text-primary);
+  --color-text-secondary: var(--krk-text-secondary);
+  --color-text-muted: var(--krk-text-muted);
+  --color-text-on-accent: var(--krk-text-on-accent);
+  --color-line: var(--krk-line-default);
+  --color-line-strong: var(--krk-line-strong);
+  --color-accent: var(--krk-accent-default);
+  --color-accent-hover: var(--krk-accent-hover);
+  --color-accent-pressed: var(--krk-accent-pressed);
+  --color-accent-text: var(--krk-accent-text);
+  --color-accent-tint: var(--krk-accent-tint);
+  --color-accent-secondary: var(--krk-accent-secondary);
+  --color-accent-secondary-text: var(--krk-accent-secondary-text);
+  --color-ok: var(--krk-status-ok);
+  --color-ok-tint: var(--krk-status-ok-tint);
+  --color-warning: var(--krk-status-warning);
+  --color-warning-tint: var(--krk-status-warning-tint);
+  --color-danger: var(--krk-status-danger);
+  --color-danger-tint: var(--krk-status-danger-tint);
+  --color-focus-ring: var(--krk-focus-ring);
+  --font-sans: var(--krk-font-family-sans);
+  --font-mono: var(--krk-font-family-mono);
+  --text-xs: var(--krk-font-size-xs);
+  --text-sm: var(--krk-font-size-sm);
+  --text-base: var(--krk-font-size-base);
+  --text-md: var(--krk-font-size-md);
+  --text-lg: var(--krk-font-size-lg);
+  --text-xl: var(--krk-font-size-xl);
+  --text-2xl: var(--krk-font-size-2xl);
+  --text-3xl: var(--krk-font-size-3xl);
+  --text-4xl: var(--krk-font-size-4xl);
+  --text-5xl: var(--krk-font-size-5xl);
+}

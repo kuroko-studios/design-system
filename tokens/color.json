@@ -1,46 +1,60 @@
 {
   "color": {
     "$type": "color",
-    "$description": "Raw palette. Dark-first (kuroko = black). Warm, teal-tinted near-blacks for surfaces; warm off-white for text; teal accent. Semantic roles live in semantic.json.",
+    "$description": "Raw palette. Dark-first (kuroko = black), cool blue/purple temperature with a violet glow. Deep indigo-black surfaces, cool off-white text, violet primary + blue secondary accents. Semantic roles live in semantic.json.",
 
     "ink": {
-      "$description": "Warm, teal-tinted near-blacks — the stagehand's black. Surfaces.",
-      "950": { "$value": "#0B100F" },
-      "900": { "$value": "#0F1615" },
-      "850": { "$value": "#131C1A" },
-      "800": { "$value": "#182220" },
-      "750": { "$value": "#1E2A27" },
-      "700": { "$value": "#26332F" },
-      "600": { "$value": "#33403B" }
+      "$description": "Cool indigo near-blacks — the stagehand's black, tuned violet. Surfaces.",
+      "950": { "$value": "#0A0714" },
+      "900": { "$value": "#0E0B1C" },
+      "850": { "$value": "#141026" },
+      "800": { "$value": "#1B1633" },
+      "750": { "$value": "#221C40" },
+      "700": { "$value": "#2A2348" },
+      "600": { "$value": "#382F5E" }
     },
 
     "fog": {
-      "$description": "Warm off-whites / greys — text on dark.",
-      "50":  { "$value": "#F4F3EE" },
-      "200": { "$value": "#D8D9D2" },
-      "400": { "$value": "#A2A79F" },
-      "500": { "$value": "#7C827B" },
-      "600": { "$value": "#5C625C" }
+      "$description": "Cool off-whites / lavender-greys — text on dark.",
+      "50":  { "$value": "#F5F4FB" },
+      "200": { "$value": "#DAD8E8" },
+      "400": { "$value": "#A7A2C0" },
+      "500": { "$value": "#7E7A98" },
+      "600": { "$value": "#5C5878" }
     },
 
-    "teal": {
-      "$description": "The signature accent. Deep brand teal, brightened for legibility on dark.",
-      "700": { "$value": "#0C5A46" },
-      "600": { "$value": "#0F6E56" },
-      "500": { "$value": "#159A73" },
-      "400": { "$value": "#2FB98E" },
-      "300": { "$value": "#57CFA6" },
-      "tint": { "$value": "#122320" }
+    "violet": {
+      "$description": "The signature accent — vibrant violet, the source of the glow.",
+      "700": { "$value": "#6D28D9" },
+      "600": { "$value": "#7C3AED" },
+      "500": { "$value": "#8B5CF6" },
+      "400": { "$value": "#A78BFA" },
+      "300": { "$value": "#C4B5FD" },
+      "tint": { "$value": "#1C1640" }
+    },
+
+    "blue": {
+      "$description": "Secondary accent — cool blue/indigo for the blue-purple duo and gradients.",
+      "500": { "$value": "#6366F1" },
+      "400": { "$value": "#818CF8" },
+      "tint": { "$value": "#141A3A" }
+    },
+
+    "green": {
+      "$description": "Success / healthy.",
+      "500": { "$value": "#34D399" },
+      "tint": { "$value": "#0E2A22" }
     },
 
     "amber": {
-      "500": { "$value": "#D39A3E" },
-      "tint": { "$value": "#231B10" }
+      "500": { "$value": "#F5B544" },
+      "tint": { "$value": "#2A2110" }
     },
 
-    "red": {
-      "500": { "$value": "#D6604A" },
-      "tint": { "$value": "#241311" }
+    "rose": {
+      "$description": "Danger / failing.",
+      "500": { "$value": "#FB7185" },
+      "tint": { "$value": "#2E1524" }
     },
 
     "pure": {

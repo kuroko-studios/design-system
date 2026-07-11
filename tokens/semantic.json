@@ -14,7 +14,7 @@
     "primary":   { "$value": "{color.fog.50}" },
     "secondary": { "$value": "{color.fog.400}" },
     "muted":     { "$value": "{color.fog.500}" },
-    "on-accent": { "$value": "{color.fog.50}" }
+    "on-accent": { "$value": "{color.pure.white}" }
   },
 
   "line": {
@@ -25,25 +25,28 @@
 
   "accent": {
     "$type": "color",
-    "default": { "$value": "{color.teal.500}" },
-    "hover":   { "$value": "{color.teal.400}" },
-    "pressed": { "$value": "{color.teal.600}" },
-    "text":    { "$value": "{color.teal.400}" },
-    "tint":    { "$value": "{color.teal.tint}" }
+    "$description": "Primary = violet (glowing). Secondary = blue, for the blue/purple duo and gradients.",
+    "default":   { "$value": "{color.violet.500}" },
+    "hover":     { "$value": "{color.violet.400}" },
+    "pressed":   { "$value": "{color.violet.600}" },
+    "text":      { "$value": "{color.violet.300}" },
+    "tint":      { "$value": "{color.violet.tint}" },
+    "secondary": { "$value": "{color.blue.500}" },
+    "secondary-text": { "$value": "{color.blue.400}" }
   },
 
   "status": {
     "$type": "color",
-    "ok":            { "$value": "{color.teal.400}" },
-    "ok-tint":       { "$value": "{color.teal.tint}" },
+    "ok":            { "$value": "{color.green.500}" },
+    "ok-tint":       { "$value": "{color.green.tint}" },
     "warning":       { "$value": "{color.amber.500}" },
     "warning-tint":  { "$value": "{color.amber.tint}" },
-    "danger":        { "$value": "{color.red.500}" },
-    "danger-tint":   { "$value": "{color.red.tint}" }
+    "danger":        { "$value": "{color.rose.500}" },
+    "danger-tint":   { "$value": "{color.rose.tint}" }
   },
 
   "focus": {
     "$type": "color",
-    "ring": { "$value": "{color.teal.500}" }
+    "ring": { "$value": "{color.violet.500}" }
   }
 }

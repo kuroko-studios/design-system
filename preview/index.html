@@ -9,12 +9,17 @@
 <style>
   * { box-sizing: border-box; margin: 0; }
   body {
-    background: var(--krk-surface-page);
+    background:
+      radial-gradient(ellipse 80% 55% at 50% -8%, rgba(139,92,246,0.22), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 85% 5%, rgba(99,102,241,0.14), transparent 70%),
+      var(--krk-surface-page);
+    background-attachment: fixed;
     color: var(--krk-text-primary);
     font-family: var(--krk-font-family-sans);
     font-size: var(--krk-font-size-base);
     line-height: var(--krk-line-height-normal);
     padding: var(--krk-space-10) var(--krk-space-5) var(--krk-space-20);
+    min-height: 100vh;
   }
   .wrap { max-width: 960px; margin: 0 auto; }
   .eyebrow {
@@ -24,9 +29,13 @@
   }
   .wordmark { font-size: var(--krk-font-size-4xl); font-weight: var(--krk-font-weight-bold);
     letter-spacing: var(--krk-letter-spacing-tight); }
-  .wordmark .dot { color: var(--krk-accent-text); }
+  .wordmark .dot { color: var(--krk-accent-hover);
+    text-shadow: 0 0 18px rgba(139,92,246,0.75), 0 0 40px rgba(139,92,246,0.4); }
   .tagline { color: var(--krk-text-secondary); font-size: var(--krk-font-size-lg);
     margin-top: var(--krk-space-2); }
+  .grad { font-style: italic; font-weight: var(--krk-font-weight-semibold);
+    background: linear-gradient(90deg, var(--krk-accent-secondary-text), var(--krk-accent-text));
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
   h2 { font-size: var(--krk-font-size-xl); margin: var(--krk-space-12) 0 var(--krk-space-4);
     padding-bottom: var(--krk-space-2); border-bottom: var(--krk-border-hairline) solid var(--krk-line-default); }
 
@@ -54,11 +63,13 @@
     border: var(--krk-border-hairline) solid transparent;
     transition: background var(--krk-duration-fast) var(--krk-easing-standard),
                 border-color var(--krk-duration-fast) var(--krk-easing-standard),
+                box-shadow var(--krk-duration-base) var(--krk-easing-standard),
                 transform var(--krk-duration-fast) var(--krk-easing-standard);
   }
   .btn:active { transform: translateY(1px); }
-  .btn-primary { background: var(--krk-accent-default); color: var(--krk-text-on-accent); }
-  .btn-primary:hover { background: var(--krk-accent-hover); }
+  .btn-primary { background: var(--krk-accent-default); color: var(--krk-text-on-accent);
+    box-shadow: var(--krk-glow-accent); }
+  .btn-primary:hover { background: var(--krk-accent-hover); box-shadow: var(--krk-glow-accent-strong); }
   .btn-secondary { background: var(--krk-surface-raised); color: var(--krk-text-primary);
     border-color: var(--krk-line-default); }
   .btn-secondary:hover { border-color: var(--krk-line-strong); }
@@ -121,7 +132,7 @@
 <div class="wrap">
   <p class="eyebrow">Kuroko Design System · dark v0</p>
   <div class="wordmark">KUROKO<span class="dot">.</span></div>
-  <p class="tagline">Give AI a job, not a question.</p>
+  <p class="tagline">Give AI <span class="grad">a job</span>, not a question.</p>
 
   <h2>Colour</h2>
   <div class="swatches" id="swatches"></div>
@@ -173,9 +184,9 @@
   const swatches = [
     ["surface-page", "Page"], ["surface-base", "Base"], ["surface-raised", "Raised"],
     ["surface-overlay", "Overlay"], ["text-primary", "Text"], ["text-secondary", "Secondary"],
-    ["text-muted", "Muted"], ["accent-default", "Accent"], ["accent-text", "Accent text"],
-    ["accent-tint", "Accent tint"], ["status-ok", "OK"], ["status-warning", "Warning"],
-    ["status-danger", "Danger"], ["line-default", "Line"]
+    ["text-muted", "Muted"], ["accent-default", "Accent (violet)"], ["accent-secondary", "Secondary (blue)"],
+    ["accent-text", "Accent text"], ["accent-tint", "Accent tint"], ["status-ok", "OK"],
+    ["status-warning", "Warning"], ["status-danger", "Danger"], ["line-default", "Line"]
   ];
   const cs = getComputedStyle(document.documentElement);
   const resolve = (name) => cs.getPropertyValue('--krk-' + name).trim();

@@ -1,0 +1,10 @@
+{
+  "glow": {
+    "$type": "shadow",
+    "$description": "The signature blue/purple bloom. Violet (accent) and blue variants for buttons, focus, and hero backdrops. RGB tracks color.violet.500 (139,92,246) and color.blue.500 (99,102,241).",
+    "accent-soft":   { "$value": "0 0 24px rgba(139,92,246,0.25)" },
+    "accent":        { "$value": "0 0 40px rgba(139,92,246,0.40)" },
+    "accent-strong": { "$value": "0 0 64px rgba(139,92,246,0.55)" },
+    "blue":          { "$value": "0 0 40px rgba(99,102,241,0.35)" }
+  }
+}

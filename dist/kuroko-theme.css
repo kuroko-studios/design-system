@@ -25,6 +25,9 @@
   --color-accent-tint: var(--krk-accent-tint);
   --color-accent-secondary: var(--krk-accent-secondary);
   --color-accent-secondary-text: var(--krk-accent-secondary-text);
+  --color-accent-tertiary: var(--krk-accent-tertiary);
+  --color-accent-tertiary-text: var(--krk-accent-tertiary-text);
+  --color-accent-tertiary-tint: var(--krk-accent-tertiary-tint);
   --color-ok: var(--krk-status-ok);
   --color-ok-tint: var(--krk-status-ok-tint);
   --color-warning: var(--krk-status-warning);

@@ -32,7 +32,10 @@
     "text":      { "$value": "{color.violet.300}" },
     "tint":      { "$value": "{color.violet.tint}" },
     "secondary": { "$value": "{color.blue.500}" },
-    "secondary-text": { "$value": "{color.blue.400}" }
+    "secondary-text": { "$value": "{color.blue.400}" },
+    "tertiary": { "$value": "{color.teal.500}" },
+    "tertiary-text": { "$value": "{color.teal.400}" },
+    "tertiary-tint": { "$value": "{color.teal.tint}" }
   },
 
   "status": {

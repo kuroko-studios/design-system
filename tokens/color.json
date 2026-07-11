@@ -40,6 +40,14 @@
       "tint": { "$value": "#141A3A" }
     },
 
+    "teal": {
+      "$description": "Tertiary accent — complementary teal against the violet/indigo field. Eyebrows, small labels, counterpoint highlights.",
+      "500": { "$value": "#14B8A6" },
+      "400": { "$value": "#2DD4BF" },
+      "300": { "$value": "#5EEAD4" },
+      "tint": { "$value": "#0C2624" }
+    },
+
     "green": {
       "$description": "Success / healthy.",
       "500": { "$value": "#34D399" },

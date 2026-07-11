@@ -24,6 +24,10 @@
   --krk-color-blue-400: #818cf8;
   --krk-color-blue-500: #6366f1;
   --krk-color-blue-tint: #141a3a;
+  --krk-color-teal-300: #5eead4;
+  --krk-color-teal-400: #2dd4bf;
+  --krk-color-teal-500: #14b8a6;
+  --krk-color-teal-tint: #0c2624;
   --krk-color-green-500: #34d399;
   --krk-color-green-tint: #0e2a22;
   --krk-color-amber-500: #f5b544;
@@ -115,6 +119,9 @@
   --krk-accent-tint: var(--krk-color-violet-tint);
   --krk-accent-secondary: var(--krk-color-blue-500);
   --krk-accent-secondary-text: var(--krk-color-blue-400);
+  --krk-accent-tertiary: var(--krk-color-teal-500);
+  --krk-accent-tertiary-text: var(--krk-color-teal-400);
+  --krk-accent-tertiary-tint: var(--krk-color-teal-tint);
   --krk-status-ok: var(--krk-color-green-500);
   --krk-status-ok-tint: var(--krk-color-green-tint);
   --krk-status-warning: var(--krk-color-amber-500);
